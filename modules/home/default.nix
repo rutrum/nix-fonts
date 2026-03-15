@@ -131,6 +131,9 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    # Enable fontconfig to discover fonts in the user profile
+    fonts.fontconfig.enable = true;
+
     home.packages =
       # Google Fonts
       (map buildGoogleFont cfg.googleFonts)

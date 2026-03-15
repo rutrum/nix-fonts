@@ -1,139 +1,285 @@
 # nix-fonts
 
-A Nix flake for easily downloading fonts from sources like FontSquirrel.
+Declarative font installation for NixOS and Home Manager.
 
-## Status: Work In Progress
+## Quick Start
 
-**Current state:** Core infrastructure is complete and verified working. Font hosting solution needed.
-
-### What's Working
-
-- Flake structure using [numtide/blueprint](https://github.com/numtide/blueprint)
-- `lib.fontSquirrel.mkFont` and `lib.fontSquirrel.mkFontByName` functions
-- NixOS and Home Manager modules
-- Rust CLI generator (builds but can't fetch from FontSquirrel directly)
-- Dev shell for contributors
-- **Font packaging verified working** with 3 test fonts (Open Sans, Raleway, Source Code Pro)
-
-### What's Blocked
-
-FontSquirrel's API and download endpoints are protected by CloudFront WAF. Automated tools (`curl`, Nix's `fetchzip`) receive empty responses or HTTP 202 "Accepted" errors. **Browser downloads work fine** - the protection only blocks programmatic access.
-
-### Next Step: Host Fonts Somewhere
-
-The flake works correctly when fonts are served from an accessible URL. Options:
-
-1. **GitHub Releases** (recommended): Upload font ZIPs to releases in this repo
-2. **Self-hosted mirror**: Any static file server (S3, Cloudflare R2, etc.)
-3. **Existing archive**: [Jolg42/FontSquirrel-Fonts](https://github.com/Jolg42/FontSquirrel-Fonts) (outdated, 2016)
-
-### Manual Testing Workflow
-
-To verify the system works locally:
-
-```bash
-# 1. Download fonts via browser from fontsquirrel.com/fonts/{name}
-# 2. Save ZIPs to a directory (e.g., ~/fonts/)
-# 3. Serve them locally
-cd ~/fonts && python3 -m http.server 8765
-
-# 4. Update catalog.json URLs to http://localhost:8765/{name}.zip
-# 5. Build with sandbox disabled
-nix build .#open-sans --option sandbox false
-```
-
-## Project Structure
-
-```
-nix-fonts/
-├── flake.nix                 # Blueprint-based flake
-├── catalog.json              # Font metadata (placeholder, needs real hashes)
-├── lib/
-│   ├── default.nix           # Main lib exports
-│   └── fontSquirrel.nix      # mkFont, mkFontByName helpers
-├── packages/
-│   ├── nix-fonts-gen.nix     # Rust CLI package
-│   ├── open-sans.nix         # Example font packages
-│   ├── raleway.nix
-│   └── source-code-pro.nix
-├── modules/
-│   ├── nixos/default.nix     # NixOS module
-│   └── home/default.nix      # Home Manager module
-├── devshells/default.nix     # Development environment
-└── generator/                # Rust catalog generator
-    ├── Cargo.toml
-    └── src/
-```
-
-## Intended Usage (Once Complete)
-
-### Direct package access
 ```nix
 {
   inputs.nix-fonts.url = "github:rutrum/nix-fonts";
 
-  # In your NixOS config:
-  fonts.packages = [
-    inputs.nix-fonts.packages.${system}.open-sans
-    inputs.nix-fonts.packages.${system}.raleway
-  ];
+  outputs = { self, nixpkgs, nix-fonts, ... }: {
+    nixosConfigurations.myhost = nixpkgs.lib.nixosSystem {
+      modules = [
+        nix-fonts.nixosModules.default
+        {
+          nix-fonts = {
+            enable = true;
+            googleFonts = [ "roboto" "open-sans" "fira-code" ];
+          };
+        }
+      ];
+    };
+  };
 }
 ```
 
-### Using the NixOS module
+## Installation
+
+### Flake Input
+
+Add nix-fonts to the flake inputs:
+
 ```nix
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nix-fonts.url = "github:rutrum/nix-fonts";
+  };
+}
+```
+
+### NixOS Module
+
+Import the module and configure fonts:
+
+```nix
+{ inputs, ... }:
+
 {
   imports = [ inputs.nix-fonts.nixosModules.default ];
 
   nix-fonts = {
     enable = true;
-    fonts = [ "open-sans" "fira-code" "raleway" ];
+    googleFonts = [ "roboto" "inter" "jetbrains-mono" ];
   };
 }
 ```
 
-### Using the Home Manager module
+Fonts are installed system-wide via `fonts.packages`. NixOS automatically configures fontconfig to discover these fonts.
+
+### Home Manager Module
+
+For user-level font installation:
+
 ```nix
+{ inputs, ... }:
+
 {
   imports = [ inputs.nix-fonts.homeManagerModules.default ];
 
   nix-fonts = {
     enable = true;
-    fonts = [ "open-sans" "fira-code" ];
+    googleFonts = [ "roboto" "open-sans" ];
   };
 }
 ```
 
-### Custom fonts via lib
+Fonts are installed per-user via `home.packages`. The module automatically enables `fonts.fontconfig.enable` so that fontconfig discovers the fonts in the user profile.
+
+## Usage
+
+### Google Fonts
+
+Fonts in the catalog can be specified by name:
+
 ```nix
-let
-  myFont = inputs.nix-fonts.lib.fontSquirrel.mkFont {
-    inherit pkgs;
-    fontDef = {
-      name = "My Font";
-      url_name = "my-font";
-      download_url = "https://example.com/my-font.zip";
-      sha256 = "sha256-...";
-    };
-  };
-in { fonts.packages = [ myFont ]; }
+nix-fonts.googleFonts = [
+  "roboto"
+  "open-sans"
+  "fira-code"
+  "jetbrains-mono"
+];
 ```
 
-## Development
+For fonts not in the catalog, or when using non-default subsets or formats, provide the full configuration with a sha256 hash:
+
+```nix
+nix-fonts.googleFonts = [
+  "roboto"  # From catalog
+  {
+    name = "noto-sans";
+    subsets = [ "latin" "cyrillic" ];
+    sha256 = "sha256-...";
+  }
+  {
+    name = "open-sans";
+    formats = [ "woff2" ];
+    sha256 = "sha256-...";
+  }
+];
+```
+
+The default configuration uses `latin` subset and `ttf` format. Fonts in the catalog have pre-computed hashes for this configuration.
+
+### DaFont
+
+DaFont fonts always require a sha256 hash:
+
+```nix
+nix-fonts.dafont = [
+  { name = "pacifico"; sha256 = "sha256-..."; }
+  { name = "lobster"; sha256 = "sha256-..."; }
+];
+```
+
+The font name should match the URL format on dafont.com. For example, `https://www.dafont.com/pacifico.font` uses the name `pacifico`.
+
+### Extra Fonts
+
+Additional font packages can be included via `extraFonts`:
+
+```nix
+nix-fonts = {
+  enable = true;
+  googleFonts = [ "roboto" ];
+  extraFonts = [ pkgs.nerdfonts ];
+};
+```
+
+## CLI Tools
+
+### search-fonts
+
+Search and browse available fonts in the catalog:
 
 ```bash
-# Enter dev shell
-nix develop
+# Search by name
+nix run github:rutrum/nix-fonts#search-fonts -- roboto
 
-# Build the generator
-cd generator && cargo build
+# List all fonts
+nix run github:rutrum/nix-fonts#search-fonts -- --list
 
-# Run generator (currently blocked by FontSquirrel WAF)
-cargo run -- generate --limit 5 --output ../catalog.json
+# Filter by provider
+nix run github:rutrum/nix-fonts#search-fonts -- --provider googlefonts
 
-# Check flake
-nix flake check
+# Filter by category
+nix run github:rutrum/nix-fonts#search-fonts -- --category monospace
 ```
+
+### add-font
+
+Get the configuration snippet for a font, with automatic hash fetching:
+
+```bash
+# Google Fonts (from catalog)
+nix run github:rutrum/nix-fonts#add-font -- googlefonts roboto
+# Output:
+#   nix-fonts.googleFonts = [
+#     "roboto"
+#   ];
+
+# Google Fonts (not in catalog - fetches hash)
+nix run github:rutrum/nix-fonts#add-font -- googlefonts fira-code
+# Output:
+#   nix-fonts.googleFonts = [
+#     { name = "fira-code"; sha256 = "sha256-..."; }
+#   ];
+
+# DaFont (always fetches hash)
+nix run github:rutrum/nix-fonts#add-font -- dafont pacifico
+# Output:
+#   nix-fonts.dafont = [
+#     { name = "pacifico"; sha256 = "sha256-..."; }
+#   ];
+```
+
+For Google Fonts with custom subsets or formats:
+
+```bash
+nix run github:rutrum/nix-fonts#add-font -- googlefonts noto-sans --subsets latin,cyrillic
+```
+
+## Providers
+
+### Google Fonts
+
+The primary and recommended provider. Google Fonts are served via the [google-webfonts-helper](https://gwfh.mranftl.com) API.
+
+- Over 1900 fonts available
+- Pre-computed hashes in the catalog for the default configuration (latin subset, ttf format)
+- Custom subsets and formats supported with user-provided hash
+
+### DaFont
+
+DaFont provides decorative, novelty, and specialty fonts.
+
+- No catalog support; all fonts require a user-provided sha256 hash
+- Use the `add-font` CLI tool to fetch hashes
+
+### FontSquirrel
+
+FontSquirrel downloads are currently blocked by CloudFront WAF protection. The provider code exists but cannot fetch fonts programmatically.
+
+## Advanced Usage
+
+### Library Functions
+
+For direct access to font-building functions:
+
+```nix
+let
+  inherit (inputs.nix-fonts.lib) googlefonts dafont;
+in {
+  # Build a font from the catalog
+  fonts.packages = [
+    (googlefonts.mkFontByName pkgs "roboto")
+  ];
+
+  # Build a font dynamically (not in catalog)
+  fonts.packages = [
+    (googlefonts.mkFontDynamic {
+      inherit pkgs;
+      name = "my-font";
+      sha256 = "sha256-...";
+      subsets = [ "latin" "greek" ];
+      formats = [ "ttf" ];
+    })
+  ];
+
+  # DaFont dynamic font
+  fonts.packages = [
+    (dafont.mkFontDynamic {
+      inherit pkgs;
+      name = "pacifico";
+      sha256 = "sha256-...";
+    })
+  ];
+}
+```
+
+## Troubleshooting
+
+### Hash mismatch error
+
+If a font download fails with a hash mismatch, the upstream font may have been updated. Use the `add-font` tool to fetch the current hash:
+
+```bash
+nix run github:rutrum/nix-fonts#add-font -- googlefonts <font-name>
+```
+
+### Font not found in catalog
+
+For fonts not in the catalog, provide the full configuration with sha256:
+
+```nix
+nix-fonts.googleFonts = [
+  { name = "uncommon-font"; sha256 = "sha256-..."; }
+];
+```
+
+Use `add-font` to fetch the hash automatically.
+
+### DaFont download fails
+
+Ensure the font name matches the DaFont URL format. The name should be lowercase with underscores:
+
+- `https://www.dafont.com/my-font.font` → `name = "my_font"`
+- `https://www.dafont.com/cool-font.font` → `name = "cool_font"`
+
+### Fonts not appearing after rebuild
+
+Run `fc-cache -f` to refresh the font cache, or log out and back in.
 
 ## License
 
