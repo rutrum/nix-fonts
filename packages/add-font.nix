@@ -107,19 +107,26 @@ pkgs.writeShellScriptBin "add-font" ''
         echo "URL: $DOWNLOAD_URL"
         echo ""
 
-        PREFETCH_OUTPUT=$(${pkgs.nix}/bin/nix-prefetch-url --unpack --name "$FONT_ID_NORMALIZED.zip" "$DOWNLOAD_URL" 2>&1) || {
+        # Use curl + unzip + nix hash path to match fetchzip behavior
+        # (nix-prefetch-url --unpack strips root for single-file archives, but fetchzip with stripRoot=false doesn't)
+        TEMP_DIR=$(mktemp -d)
+        trap "rm -rf $TEMP_DIR" EXIT
+
+        if ! ${pkgs.curl}/bin/curl -sL "$DOWNLOAD_URL" -o "$TEMP_DIR/$FONT_ID_NORMALIZED.zip"; then
           echo "✗ Failed to fetch font. Check that the font ID is correct."
-          echo ""
-          echo "Error: $PREFETCH_OUTPUT"
           echo ""
           echo "You can search for fonts with: nix run .#search-fonts -- <query>"
           echo "Or browse Google Fonts at: https://fonts.google.com"
           exit 1
-        }
-        # Extract just the hash (first line, before any "path is" info)
-        HASH=$(echo "$PREFETCH_OUTPUT" | grep -v "^path is" | head -n1)
+        fi
 
-        SRI_HASH=$(${pkgs.nix}/bin/nix hash to-sri --type sha256 "$HASH")
+        mkdir -p "$TEMP_DIR/unpacked"
+        if ! ${pkgs.unzip}/bin/unzip -q "$TEMP_DIR/$FONT_ID_NORMALIZED.zip" -d "$TEMP_DIR/unpacked" 2>/dev/null; then
+          echo "✗ Failed to unzip font. The archive may be corrupt or the font ID may be incorrect."
+          exit 1
+        fi
+
+        SRI_HASH=$(${pkgs.nix}/bin/nix hash path "$TEMP_DIR/unpacked")
 
         echo "✓ Successfully fetched font!"
         echo ""
