@@ -270,13 +270,6 @@ nix-fonts.googleFonts = [
 
 Use `add-font` to fetch the hash automatically.
 
-### DaFont download fails
-
-Ensure the font name matches the DaFont URL format. The name should be lowercase with underscores:
-
-- `https://www.dafont.com/my-font.font` → `name = "my_font"`
-- `https://www.dafont.com/cool-font.font` → `name = "cool_font"`
-
 ### Fonts not appearing after rebuild
 
 Run `fc-cache -f` to refresh the font cache, or log out and back in.

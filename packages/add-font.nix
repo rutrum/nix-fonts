@@ -149,7 +149,9 @@ pkgs.writeShellScriptBin "add-font" ''
 
     dafont)
       # DaFont always requires hash (no catalog support yet)
-      FONT_URL_NAME=$(echo "$FONT_ID" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
+      # DaFont URLs use underscores (dl/?f=texas_tango) but page URLs use hyphens (dafont.com/texas-tango.font)
+      # Convert both spaces and hyphens to underscores for the download URL
+      FONT_URL_NAME=$(echo "$FONT_ID" | tr '[:upper:]' '[:lower:]' | tr ' -' '_')
       DOWNLOAD_URL="https://dl.dafont.com/dl/?f=$FONT_URL_NAME"
 
       echo "Fetching hash for \"$FONT_ID\" from DaFont..."
@@ -161,18 +163,20 @@ pkgs.writeShellScriptBin "add-font" ''
       TEMP_DIR=$(mktemp -d)
       trap "rm -rf $TEMP_DIR" EXIT
 
-      if ! ${pkgs.curl}/bin/curl -sL "$DOWNLOAD_URL" -o "$TEMP_DIR/$FONT_URL_NAME.zip"; then
-        echo "✗ Failed to download font. Check that the font name is correct."
+      HTTP_CODE=$(${pkgs.curl}/bin/curl -sL -w "%{http_code}" "$DOWNLOAD_URL" -o "$TEMP_DIR/$FONT_URL_NAME.zip")
+      if [[ "$HTTP_CODE" != "200" ]]; then
+        echo "✗ Font not found (HTTP $HTTP_CODE). Check that the font name is correct."
         echo ""
         echo "Browse DaFont at: https://www.dafont.com"
-        echo "The font name should match the URL (e.g., 'comic_sans' from dafont.com/comic-sans.font)"
         exit 1
       fi
 
       # Unzip and compute hash of contents
       mkdir -p "$TEMP_DIR/unpacked"
       if ! ${pkgs.unzip}/bin/unzip -q "$TEMP_DIR/$FONT_URL_NAME.zip" -d "$TEMP_DIR/unpacked" 2>/dev/null; then
-        echo "✗ Failed to unzip font. The archive may be corrupt."
+        echo "✗ Font not found. The server returned an invalid response."
+        echo ""
+        echo "Browse DaFont at: https://www.dafont.com"
         exit 1
       fi
 
