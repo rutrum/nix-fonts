@@ -1,0 +1,654 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-03-14T22:50:55.839922991Z",
+  "generator_version": "0.1.0",
+  "providers": {
+    "dafont": {
+      "fonts": {}
+    },
+    "googlefonts": {
+      "fonts": {
+        "dancing-script": {
+          "name": "Dancing Script",
+          "url_name": "dancing-script",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/dancing-script?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-ZeIJJVAw9FmG5JtYrp+H3kA6/T2fXaJHTBTCLfJmF6c=",
+          "license": "ofl",
+          "classification": "handwriting",
+          "version": "v29",
+          "file_size": 128921
+        },
+        "bricolage-grotesque": {
+          "name": "Bricolage Grotesque",
+          "url_name": "bricolage-grotesque",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/bricolage-grotesque?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-H1VvQjqSuJ+P44wlRiBO/Wosb5Eya9os6fl49lrsZ3I=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v9",
+          "file_size": 197418
+        },
+        "material-icons-outlined": {
+          "name": "Material Icons Outlined",
+          "url_name": "material-icons-outlined",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/material-icons-outlined?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-72SbbDe0p5+wZ0f3osvbGq+VgEG+EXBrrIBwp6spEVE=",
+          "license": "ofl",
+          "classification": "monospace",
+          "version": "v110",
+          "file_size": 190345
+        },
+        "share-tech": {
+          "name": "Share Tech",
+          "url_name": "share-tech",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/share-tech?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-DLgYpQ4Vs1NeW0NqN5v6Bae4NAk3XezOiLt42Knc1HQ=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v23",
+          "file_size": 20079
+        },
+        "hind-siliguri": {
+          "name": "Hind Siliguri",
+          "url_name": "hind-siliguri",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/hind-siliguri?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-hdVKEPdHiQzteVPBlrpqlPixWFzQXFds2NnyBTHAnTo=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v14",
+          "file_size": 95229
+        },
+        "cairo": {
+          "name": "Cairo",
+          "url_name": "cairo",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/cairo?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-sZLr5hqRwz/Gt+kO0gBkpdcgcsKH0QYhPliIaaNLhPE=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v31",
+          "file_size": 161131
+        },
+        "material-symbols-rounded": {
+          "name": "Material Symbols Rounded",
+          "url_name": "material-symbols-rounded",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/material-symbols-rounded?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-vebhW88ztjwJCBZbWs8jJcfG6VP3tRD3cG5j0ElLC+I=",
+          "license": "ofl",
+          "classification": "monospace",
+          "version": "v321",
+          "file_size": 3720478
+        },
+        "roboto-condensed": {
+          "name": "Roboto Condensed",
+          "url_name": "roboto-condensed",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/roboto-condensed?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-hKV9QIYSfvdlliS5Cw8QJC2o8wwWl5keVPIt6sfym4s=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v31",
+          "file_size": 490591
+        },
+        "ibm-plex-sans": {
+          "name": "IBM Plex Sans",
+          "url_name": "ibm-plex-sans",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/ibm-plex-sans?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-bDHdv93bB41TNnYLbaqdQi3XhDv/Rj1MgNSjGz1WEoY=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v23",
+          "file_size": 442361
+        },
+        "noto-sans-tc": {
+          "name": "Noto Sans TC",
+          "url_name": "noto-sans-tc",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/noto-sans-tc?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-3xgOPG8i8W+Tv+SqYZg0bsa2tfl61U4T9smwl+2D2wc=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v39",
+          "file_size": 154330
+        },
+        "heebo": {
+          "name": "Heebo",
+          "url_name": "heebo",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/heebo?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-Rjq/oyLagOZPJTy6jvqJbH9ad46k/rv+KTJyYGnyjIA=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v28",
+          "file_size": 139066
+        },
+        "poppins": {
+          "name": "Poppins",
+          "url_name": "poppins",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/poppins?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-m2RHLbhH0fa0iS23lIg2CPZeIGj8ZFoLHQ0+XB/nh+Y=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v24",
+          "file_size": 197157
+        },
+        "smooch-sans": {
+          "name": "Smooch Sans",
+          "url_name": "smooch-sans",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/smooch-sans?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-KFzU6boWbCVt9UuIzCOKa8Up3gBfYfwiSf526VZgyRg=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v15",
+          "file_size": 128315
+        },
+        "bebas-neue": {
+          "name": "Bebas Neue",
+          "url_name": "bebas-neue",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/bebas-neue?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-XV68BbQCD+7yRqtPq2Txn3/Mj5Qu1/wSlRvcK1AuIXM=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v16",
+          "file_size": 17686
+        },
+        "karla": {
+          "name": "Karla",
+          "url_name": "karla",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/karla?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-a/twoVe/Uc5ZYtg0JlhuAZjhnpGs29eXGVeuj4j7X2Q=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v33",
+          "file_size": 244386
+        },
+        "roboto-mono": {
+          "name": "Roboto Mono",
+          "url_name": "roboto-mono",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/roboto-mono?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-b/tOXJs+h7V5ifC93RmqqP9A8IHqHg4o8f35bargg9k=",
+          "license": "ofl",
+          "classification": "monospace",
+          "version": "v31",
+          "file_size": 234796
+        },
+        "rubik": {
+          "name": "Rubik",
+          "url_name": "rubik",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/rubik?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-of1wYOCYHFPNDl8MoE80+sOh2xJGufDP2InMXlpWj6g=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v31",
+          "file_size": 349963
+        },
+        "inter": {
+          "name": "Inter",
+          "url_name": "inter",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/inter?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-Rk+RkGFIW7T5iXs7UO/x0xtzaN3F6CS1wH6gJHZReP0=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v20",
+          "file_size": 594634
+        },
+        "roboto": {
+          "name": "Roboto",
+          "url_name": "roboto",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/roboto?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-q6rQxud+TbzysGZjFLY7Prn9TaE6idw5gV2BJhKuUms=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v51",
+          "file_size": 514999
+        },
+        "google-sans": {
+          "name": "Google Sans",
+          "url_name": "google-sans",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/google-sans?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-7xcXtW301AqbQqLEci8kaEXyWZ9pkaLiBp1aM3xAAsA=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v67",
+          "file_size": 252098
+        },
+        "mulish": {
+          "name": "Mulish",
+          "url_name": "mulish",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/mulish?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-pSrXYNHrEiwmmJITb5re2yI9yeNHEnluku8dXAOZY7M=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v18",
+          "file_size": 284192
+        },
+        "arimo": {
+          "name": "Arimo",
+          "url_name": "arimo",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/arimo?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-9LRIejKXaWfel2b5Bk1LkfpOD8IXKMDdSvxsn/nW4nA=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v35",
+          "file_size": 125230
+        },
+        "nunito-sans": {
+          "name": "Nunito Sans",
+          "url_name": "nunito-sans",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/nunito-sans?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-0qNy9qVpr6fM+gx93sOiehLIXwd/WtbSsp+qhr1v2Pc=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v19",
+          "file_size": 294341
+        },
+        "montserrat": {
+          "name": "Montserrat",
+          "url_name": "montserrat",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/montserrat?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-MBOJArJJe6ebcLinVzf2j35nNlxZq9BKOnk9QIWtjRc=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v31",
+          "file_size": 428265
+        },
+        "kanit": {
+          "name": "Kanit",
+          "url_name": "kanit",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/kanit?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-6x498XDleXLHU7JTep2PqUB5CppJCYN0+bPBj497ToY=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v17",
+          "file_size": 448142
+        },
+        "outfit": {
+          "name": "Outfit",
+          "url_name": "outfit",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/outfit?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-8UfZCxfmOLL4jXumMCbI19h9afS/EUTMMowP9WzjOKA=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v15",
+          "file_size": 169538
+        },
+        "jost": {
+          "name": "Jost",
+          "url_name": "jost",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/jost?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-JgqR4ca2/8adfmaWomeouDpbqMu2eKwByKY22tUjV1I=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v20",
+          "file_size": 260673
+        },
+        "noto-sans": {
+          "name": "Noto Sans",
+          "url_name": "noto-sans",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/noto-sans?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-Fcs4IBulilJyWJ1r5RO/qKyIY6rXQ2yblBB/fH0TXvc=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v42",
+          "file_size": 316314
+        },
+        "archivo-black": {
+          "name": "Archivo Black",
+          "url_name": "archivo-black",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/archivo-black?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-MwqOY6A32o6hFfbb6f/GQzkRyRaLoN26yfOZiSg2XdQ=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v23",
+          "file_size": 23808
+        },
+        "noto-sans-sc": {
+          "name": "Noto Sans SC",
+          "url_name": "noto-sans-sc",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/noto-sans-sc?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-HOansL50+MF6SrM4OfH4T/3+XdIEa6jwKKv8yqWjhwk=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v40",
+          "file_size": 154708
+        },
+        "noto-sans-kr": {
+          "name": "Noto Sans KR",
+          "url_name": "noto-sans-kr",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/noto-sans-kr?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-AOfM7wdtRH7whEsBAc0C8OK4ynnC9MzuvGBho+tG0mk=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v39",
+          "file_size": 159964
+        },
+        "figtree": {
+          "name": "Figtree",
+          "url_name": "figtree",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/figtree?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-1PclP+h7Z6LLGK7aN3aaDIdoo6fhG7ROuXMXZjvk/f0=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v9",
+          "file_size": 214707
+        },
+        "prompt": {
+          "name": "Prompt",
+          "url_name": "prompt",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/prompt?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-8pNDqLu8rxbOghB2IXfsc1yMJxDMfeumEFPuFXWp9Bg=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v12",
+          "file_size": 428407
+        },
+        "saira": {
+          "name": "Saira",
+          "url_name": "saira",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/saira?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-+FuKTEBwL5fVRpgff0/rTw8xzWs6DZLNn8Gb9pkXdC0=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v23",
+          "file_size": 328733
+        },
+        "source-sans-3": {
+          "name": "Source Sans 3",
+          "url_name": "source-sans-3",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/source-sans-3?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-gFcqdf1xlv7TN7HNlDvkRHUwQb5x+FX+OmsXrmOCZQk=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v19",
+          "file_size": 318739
+        },
+        "barlow": {
+          "name": "Barlow",
+          "url_name": "barlow",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/barlow?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-6YE3aSB3Mmb2JuSIjFORQEIysJyc+4e+ouyrt1yytzE=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v13",
+          "file_size": 524184
+        },
+        "lora": {
+          "name": "Lora",
+          "url_name": "lora",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/lora?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-Q0wOJwOBcMgadmqv3unlO6duTCkkcL0TBxNsnCExc4E=",
+          "license": "ofl",
+          "classification": "serif",
+          "version": "v37",
+          "file_size": 231817
+        },
+        "lato": {
+          "name": "Lato",
+          "url_name": "lato",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/lato?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-jaa9o4MiaBwPtZpv0JIKNbuXZC8hnw97a0Sl2r1X5SA=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v25",
+          "file_size": 289169
+        },
+        "source-code-pro": {
+          "name": "Source Code Pro",
+          "url_name": "source-code-pro",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/source-code-pro?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-RkUJp1cBFPKDreI8eSVCGaABYp3pjKVmUq26sA9hXEw=",
+          "license": "ofl",
+          "classification": "monospace",
+          "version": "v31",
+          "file_size": 240341
+        },
+        "material-icons": {
+          "name": "Material Icons",
+          "url_name": "material-icons",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/material-icons?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-V1gt1kQklJW7S65hPLtf07F5XpR+OnQqGVmbu//3i3g=",
+          "license": "ofl",
+          "classification": "monospace",
+          "version": "v145",
+          "file_size": 173191
+        },
+        "titillium-web": {
+          "name": "Titillium Web",
+          "url_name": "titillium-web",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/titillium-web?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-KhA8U671qXL9OQEVNiLq5N728jyC0w5XVhFjNqgjJSg=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v19",
+          "file_size": 195613
+        },
+        "playfair-display": {
+          "name": "Playfair Display",
+          "url_name": "playfair-display",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/playfair-display?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-i8P3HSKih0kYxH3USytttDAgJmk7hEihQ1SKnznkN0Q=",
+          "license": "ofl",
+          "classification": "serif",
+          "version": "v40",
+          "file_size": 341667
+        },
+        "pt-sans": {
+          "name": "PT Sans",
+          "url_name": "pt-sans",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/pt-sans?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-Ry2j1vyAWzDDxv8DMUh66zBM/dN90BCLry2cXTHeaWM=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v18",
+          "file_size": 216012
+        },
+        "raleway": {
+          "name": "Raleway",
+          "url_name": "raleway",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/raleway?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-n6zljqoWeRNKqFeWjE0KMNG9Pf4bphaDE6tYq2wOm3Q=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v37",
+          "file_size": 521354
+        },
+        "material-symbols-outlined": {
+          "name": "Material Symbols Outlined",
+          "url_name": "material-symbols-outlined",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/material-symbols-outlined?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-aaDN9tiF2KTD5q2I4pfnqwq1cP3pAH31F7JiiLBzrtA=",
+          "license": "ofl",
+          "classification": "monospace",
+          "version": "v319",
+          "file_size": 3157965
+        },
+        "archivo": {
+          "name": "Archivo",
+          "url_name": "archivo",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/archivo?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-ctWfvk9/OScS7BQAb/Yi1TSbJzERQDXOc/o4VpRSAlA=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v25",
+          "file_size": 354361
+        },
+        "libre-baskerville": {
+          "name": "Libre Baskerville",
+          "url_name": "libre-baskerville",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/libre-baskerville?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-kTJcgEwq3k5oUuW/koAkEId/ZWBLRumdUadvLcDBMOE=",
+          "license": "ofl",
+          "classification": "serif",
+          "version": "v24",
+          "file_size": 218382
+        },
+        "oswald": {
+          "name": "Oswald",
+          "url_name": "oswald",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/oswald?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-G3D9jD63sSJdD0Bhq6kVwtHCMMS42UYu5o9s5rZ70KU=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v57",
+          "file_size": 96752
+        },
+        "open-sans": {
+          "name": "Open Sans",
+          "url_name": "open-sans",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/open-sans?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-Arc+YMEvlXubWPZDgz0LsTUrukTRbZRkxdb5cqy/haY=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v44",
+          "file_size": 282567
+        },
+        "pt-serif": {
+          "name": "PT Serif",
+          "url_name": "pt-serif",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/pt-serif?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-6ReyaD1j63aI/ewAFfKMGX60xtmAptWQg6RbCavLFn8=",
+          "license": "ofl",
+          "classification": "serif",
+          "version": "v19",
+          "file_size": 158105
+        },
+        "merriweather": {
+          "name": "Merriweather",
+          "url_name": "merriweather",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/merriweather?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-8CVfqoDgnwV9rA/OrvSZPrwT7GN+FuaI9HQzTgQHBe4=",
+          "license": "ofl",
+          "classification": "serif",
+          "version": "v33",
+          "file_size": 1001778
+        },
+        "fira-sans": {
+          "name": "Fira Sans",
+          "url_name": "fira-sans",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/fira-sans?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-wQOXmL3SpTao5Qeectb6RZ6yQ6haYmwo++Nno12NT9M=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v18",
+          "file_size": 569463
+        },
+        "dm-sans": {
+          "name": "DM Sans",
+          "url_name": "dm-sans",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/dm-sans?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-79VZzQdUuGQZBC/jK1jNmIo3nZSNAJ+HP7D612c8kVc=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v17",
+          "file_size": 349092
+        },
+        "manrope": {
+          "name": "Manrope",
+          "url_name": "manrope",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/manrope?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-UWPocWc/Mem6+/+1G8xnWjjAjlGHMgfwA8v3NWcxoVo=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v20",
+          "file_size": 127219
+        },
+        "nunito": {
+          "name": "Nunito",
+          "url_name": "nunito",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/nunito?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-tNZRKy3h6YDFb+xwdHyMK5VdK5ypBr3N4UjzJTsJXzg=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v32",
+          "file_size": 340442
+        },
+        "ubuntu": {
+          "name": "Ubuntu",
+          "url_name": "ubuntu",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/ubuntu?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-B23eQxgsuhAW+/4WuPaeWG9dg9oflpukg2uUlet20so=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v21",
+          "file_size": 330749
+        },
+        "quicksand": {
+          "name": "Quicksand",
+          "url_name": "quicksand",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/quicksand?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-c19jltmGTaQWbkn+h5ccXrXVXlRUEeZXvHXHBBeLb3U=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v37",
+          "file_size": 98479
+        },
+        "work-sans": {
+          "name": "Work Sans",
+          "url_name": "work-sans",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/work-sans?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-d3QpgfdnEpJJAZ64xklLIaQnWQI3nst/aFSeVj66iuE=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v24",
+          "file_size": 472915
+        },
+        "roboto-slab": {
+          "name": "Roboto Slab",
+          "url_name": "roboto-slab",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/roboto-slab?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-WOwCtSDg8VmDgi70rMsxW+Fj7TVijB3N4f6LDD9W4OA=",
+          "license": "ofl",
+          "classification": "serif",
+          "version": "v36",
+          "file_size": 161899
+        },
+        "noto-sans-jp": {
+          "name": "Noto Sans JP",
+          "url_name": "noto-sans-jp",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/noto-sans-jp?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-wDrA148AiKW1JCSH27SqNUVqYjy+o6mKTE5LcFcIcNs=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v56",
+          "file_size": 151520
+        },
+        "fjalla-one": {
+          "name": "Fjalla One",
+          "url_name": "fjalla-one",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/fjalla-one?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-pZ2v3xJNqyn2U/ogxALANIXbgD6qUyzafyUxZ8oW6Ew=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v16",
+          "file_size": 57291
+        },
+        "inconsolata": {
+          "name": "Inconsolata",
+          "url_name": "inconsolata",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/inconsolata?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-Zqv+pGGWuvjLtUC1AyfIYo8D4GqmFbWXJB21ue5CYS0=",
+          "license": "ofl",
+          "classification": "monospace",
+          "version": "v37",
+          "file_size": 178222
+        },
+        "noto-serif": {
+          "name": "Noto Serif",
+          "url_name": "noto-serif",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/noto-serif?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-06ptKZbzTzCJlLmuAcDnj97kXbz9qDyjb8irTBiK9fE=",
+          "license": "ofl",
+          "classification": "serif",
+          "version": "v33",
+          "file_size": 356457
+        },
+        "plus-jakarta-sans": {
+          "name": "Plus Jakarta Sans",
+          "url_name": "plus-jakarta-sans",
+          "download_url": "https://gwfh.mranftl.com/api/fonts/plus-jakarta-sans?download=zip&subsets=latin&formats=ttf",
+          "sha256": "sha256-gGbubKLP/iaCovu/hmMIPV/Hnjm7evlYmB56rmNnZIo=",
+          "license": "ofl",
+          "classification": "sans-serif",
+          "version": "v12",
+          "file_size": 229772
+        }
+      }
+    }
+  }
+}
